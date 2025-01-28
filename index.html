@@ -1,7 +1,147 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Portafolio - Juan</title>
+  <!-- Google Fonts (Ejemplo) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link 
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Montserrat:wght@700&display=swap" 
+    rel="stylesheet">
+  <!-- AOS (Animate On Scroll) para animaciones al hacer scroll -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  <!-- Hoja de estilos principal -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+
+  <!-- ========== ENCABEZADO ========== -->
+  <header>
+    <nav class="navbar">
+      <a href="#" class="logo">JuanDev</a>
+      <ul class="nav-links">
+        <li><a href="#about">Sobre mí</a></li>
+        <li><a href="#proyectos">Proyectos</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ========== SECCIÓN HERO ========== -->
+  <section class="hero">
+    <div class="hero-content" data-aos="fade-up">
+      <h1>¡Hola! Soy Juan</h1>
+      <p>Desarrollador de Aplicaciones Web y Multiplataforma</p>
+      <a href="#about" class="btn-primary">Conóceme más</a>
+    </div>
+  </section>
+
+  <!-- ========== SECCIÓN SOBRE MÍ ========== -->
+  <section id="about" class="about-section" data-aos="fade-up">
+    <h2>Sobre mí</h2>
+    <div class="about-content">
+      <img src="images/me.jpg" alt="Foto de Juan" class="about-img" />
+      <div class="about-text">
+        <p>
+          ¡Hola! Soy Juan, estudiante de Desarrollo de Aplicaciones Multiplataforma 
+          y con formación en Desarrollo de Aplicaciones Web...
+        </p>
+        <p>
+          Tengo experiencia con lenguajes como Java, Kotlin, JavaScript y frameworks...
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SECCIÓN PROYECTOS ========== -->
+  <section id="proyectos" class="proyecto-section" data-aos="fade-up">
+    <h2>Proyectos</h2>
+    <div class="proyecto-card">
+      <img src="images/proyecto1.png" alt="Proyecto 1" class="proyecto-img" />
+      <div class="proyecto-info">
+        <h3>Proyecto Destacado</h3>
+        <p>Descripción breve del proyecto...</p>
+        <p>Tecnologías: React, Node.js, etc.</p>
+        <a href="https://github.com/Caastan" target="_blank" class="btn-secondary">
+          Ver en GitHub
+        </a>
+      </div>
+    </div>
+    <!-- Repite o duplica esta tarjeta para más proyectos -->
+  </section>
+
+  <!-- ========== SECCIÓN CONTACTO ========== -->
+  <section id="contacto" class="contact-section" data-aos="fade-up">
+    <h2>Contacto</h2>
+    <p>
+      Si te interesa mi trabajo o quieres ponerte en contacto conmigo, 
+      rellena el siguiente formulario:
+    </p>
+    
+    <!-- IMPORTANTE: Agregar un ID para el form -->
+    <form id="contactForm" class="contact-form">
+      <div class="form-group">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="from_name" placeholder="Tu nombre" required />
+      </div>
+      <div class="form-group">
+        <label for="email">Correo electrónico</label>
+        <input type="email" id="email" name="reply_to" placeholder="Tu email" required />
+      </div>
+      <div class="form-group">
+        <label for="mensaje">Mensaje</label>
+        <textarea id="mensaje" name="message" rows="5" placeholder="Escribe tu mensaje" required></textarea>
+      </div>
+      <button type="submit" class="btn-primary">Enviar</button>
+    </form>
+  </section>
+
+  <!-- ========== PIE DE PÁGINA ========== -->
+  <footer>
+    <p>© 2025 Juan - Todos los derechos reservados.</p>
+    <div class="footer-links">
+      <a href="https://github.com/Caastan" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/juan2607/" target="_blank">LinkedIn</a>
+    </div>
+  </footer>
+
+  <!-- ========== SCRIPTS ========== -->
+  <!-- AOS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- EmailJS -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.1/dist/email.min.js"></script>
+  
+  <script>
+    AOS.init({
+      duration: 1200, // Duración en ms
+      once: false,    // false = la animación se activa cada vez que se ve el elemento
+      offset: 200     // distancia en px para iniciar la animación
+    });
+  
+
+    // Inicializa EmailJS con tu PUBLIC_KEY
+    (function() {
+      emailjs.init("PSSd9WtzlBXCWAMxP");  // <-- Reemplaza con tu public key
+    })();
+
+    // Escucha el evento 'submit' del formulario
+    const contactForm = document.getElementById('contactForm');
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault(); // Evita el refresh de la página
+      
+      // Envía el formulario con EmailJS
+      emailjs.sendForm('service_izqva7r', 'template_ty431l3',this)
+        .then(function(response) {
+          alert('Mensaje enviado correctamente. ¡Gracias por contactar!');
+          // Limpiar campos
+          contactForm.reset();
+        }, function(error) {
+          alert('Ocurrió un error al enviar el mensaje. Por favor intenta nuevamente.');
+          console.error('Error:', error);
+        });
+    });
+  </script>
+
 </body>
 </html>

@@ -1,0 +1,300 @@
+/* ---------- RESET BÁSICO ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Fuentes: Roboto (texto), Montserrat (títulos) */
+body {
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+  background: #fafafa;
+}
+
+/* ---------- NAVBAR / ENCABEZADO ---------- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.logo {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #333;
+  text-decoration: none;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.3s;
+}
+
+.nav-links li a:hover {
+  background-color: #f5f5f5;
+  border-radius: 4px;
+}
+
+/* ---------- HERO / PORTADA ---------- */
+.hero {
+  background: url('../images/fondo-hero.jpg') center / cover no-repeat; 
+  /* Reemplaza con tu imagen (ajusta la ruta si es distinta) */
+  min-height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  position: relative;
+}
+
+/* Capa oscura para que el texto resalte más */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 600px;
+  margin: 0 1rem;
+}
+
+.hero h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+/* ---------- BOTONES ---------- */
+.btn-primary, .btn-secondary {
+  display: inline-block;
+  padding: 0.7rem 1.5rem;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.btn-primary {
+  background-color: #00bfa5;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: #009c88;
+}
+
+.btn-secondary {
+  background-color: #fff;
+  color: #333;
+  border: 1px solid #ccc;
+}
+
+.btn-secondary:hover {
+  background-color: #f2f2f2;
+}
+
+/* ---------- SECCIÓN SOBRE MÍ ---------- */
+.about-section {
+  padding: 2rem;
+  max-width: 1000px;
+  margin: 2rem auto;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.about-section h2 {
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+}
+
+.about-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-img {
+  flex: 1 1 250px;
+  max-width: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.about-text {
+  flex: 2 1 300px;
+}
+
+.about-text p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+/* ---------- SECCIÓN PROYECTOS ---------- */
+.proyecto-section {
+  padding: 2rem;
+  margin-top: 2rem;
+  background-color: #fdfdfd;
+}
+
+.proyecto-section h2 {
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.proyecto-card {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto 2rem auto;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  padding: 1rem;
+}
+
+.proyecto-img {
+  width: 100%;
+  max-width: 450px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.proyecto-info {
+  flex: 1;
+}
+
+.proyecto-info h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.proyecto-info p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+/* ---------- SECCIÓN CONTACTO ---------- */
+.contact-section {
+  padding: 2rem;
+  margin-top: 2rem;
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.contact-section h2 {
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.contact-section p {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 2rem auto;
+  line-height: 1.6;
+}
+
+.contact-form {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 1.2rem;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 0.3rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.7rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.contact-form button {
+  width: 100%;
+  font-size: 1rem;
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+  background-color: #f8f8f8;
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: 2rem;
+}
+
+footer p {
+  margin-bottom: 0.5rem;
+}
+
+.footer-links a {
+  margin: 0 0.5rem;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+/* ---------- MEDIA QUERIES (RESPONSIVE) ---------- */
+@media (max-width: 768px) {
+  .proyecto-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-content {
+    flex-direction: column;
+  }
+
+  .about-img {
+    max-width: 200px;
+    margin-bottom: 1rem;
+  }
+}
